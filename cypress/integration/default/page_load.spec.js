@@ -12,12 +12,12 @@ describe("when the page loads", () => {
 
   it("should render the correct title", () => {
     cy.get("[data-cy='product-title']")
-      .contains("QC headphones - Black");
+      .should("have.text", "QC headphones - Black");
   });
 
   it("should set the correct price", () => {
     cy.get("[data-cy='product-price']")
-      .contains("$ 100");
+      .should("have.text", "$ 100");
   });
 
   it("should load a new product", () => {

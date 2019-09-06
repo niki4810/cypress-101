@@ -4,7 +4,7 @@ describe("when the page loads", () => {
 
     cy.route("GET", "/api/ads", "fixture:default/ads").as("adsCall");;
 
-    cy.fixture("default/regular-item-alt")
+    cy.fixture("default/regular_item_alt")
       .then((item) => {
         cy.route({
           method: "POST",

@@ -49,7 +49,7 @@ describe("when the page loads", () => {
       .should("include", "https://dummyimage.com/250x200/d6d2d6/ff0000.png&text=Foo");
   });
 
-  describe("When a variant item is clicked", () => {
+  describe("When an alternate item is clicked", () => {
     beforeEach(() => {
       cy.fixture("default/regular_item_alt")
       .then((item) => {

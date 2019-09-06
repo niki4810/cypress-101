@@ -2,10 +2,7 @@ describe("when the page loads", () => {
   beforeEach(() => {
     cy.server();
 
-    cy.fixture("default/ads")
-      .then((data) => {
-        cy.route("GET", "/api/ads", data);
-      }).as("adsCall");
+    cy.route("GET", "/api/ads", "fixture:default/ads").as("adsCall");;
 
     cy.viewport(1024, 1000);
     cy.visit("/item/21311919");

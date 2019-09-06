@@ -48,7 +48,7 @@ describe("when the page loads", () => {
       .should("include", "https://dummyimage.com/250x200/d6d2d6/ff0000.png&text=Foo");
   });
 
-  describe("When a variant item is clicked", () => {
+  describe("When an alternate item is clicked", () => {
     it("should load a new product", () => {
       cy.get("[data-cy='spinner']").as("pageSpinner");
       cy.get("@pageSpinner").should('have.class', 'hidden');

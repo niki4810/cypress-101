@@ -4,25 +4,26 @@ describe("when the page loads", () => {
 
     cy.route("GET", "/api/ads", "fixture:default/ads").as("adsCall");;
 
-    cy.fixture("default/regular_item_alt")
+    cy.fixture("default/regular_item_primary")
       .then((item) => {
         cy.route({
           method: "POST",
           url: "/api/item", 
           response: item,
-          delay: 500
-        }).as("altItemCall");
+          delay: 0
+        }).as("itemCall");
       });
 
     cy.viewport(1024, 1000);
     cy.visit("/item/21311919");
 
+    cy.wait("@itemCall");
     cy.wait("@adsCall");
   });
 
   it("should render the correct title", () => {
     cy.get("[data-cy='product-title']")
-      .should("have.text", "QC headphones - Black");
+      .should("have.text", "[MOCK] QC headphones - Black");
   });
 
   it("should set the correct price", () => {
@@ -49,6 +50,17 @@ describe("when the page loads", () => {
   });
 
   describe("When a variant item is clicked", () => {
+    beforeEach(() => {
+      cy.fixture("default/regular_item_alt")
+      .then((item) => {
+        cy.route({
+          method: "POST",
+          url: "/api/item", 
+          response: item,
+          delay: 500
+        }).as("altItemCall");
+      });
+    });
     it("should load a new product", () => {
       cy.get("[data-cy='spinner']").as("pageSpinner");
       cy.get("@pageSpinner").should('have.class', 'hidden');

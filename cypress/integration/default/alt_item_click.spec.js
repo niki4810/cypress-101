@@ -1,4 +1,4 @@
-describe("When a alternate item is clicked", () => {
+describe("When an alternate item is clicked", () => {
   beforeEach(() => {
     cy.loadItemPage();
 

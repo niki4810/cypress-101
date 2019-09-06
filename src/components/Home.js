@@ -315,7 +315,7 @@ const Banner = () => {
     return null;
   }
   return (
-    <div className="banner" data-cy="banner">
+    <div className="banner spacer-v" data-cy="banner">
       <svg height="150" width="300">
         <text fill="blue" fontSize="20" fontFamily="Verdana" x="30" y="75">
           Home is where the ❤️ is

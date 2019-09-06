@@ -188,10 +188,7 @@ const Image = () => {
   const thumbnails = [];
 
   useEffect(() => {
-    // TODO: remove this intentional bug.
-    if (!selectedImageId) {
-      setSelectedImage(get(selectedItemImages, "0", ""));
-    }
+    setSelectedImage(get(selectedItemImages, "0", ""));
   }, [selected]);
 
   for (let imageId of selectedItemImages) {

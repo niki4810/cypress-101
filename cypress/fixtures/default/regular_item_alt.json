@@ -1,0 +1,102 @@
+{
+  "selected": {
+    "id": "21311920",
+    "zipcode": "94401"
+  },
+  "items": {
+    "21311919": {
+      "id": "21311919",
+      "title": "QC headphones - Black",
+      "images": [
+        "img1",
+        "img2",
+        "img3"
+      ],
+      "offers": [
+        "offer1"
+      ],
+      "flags": [
+        "clerance",
+        "rollback"
+      ],
+      "reviews": [
+        "review1",
+        "review2",
+        "review3"
+      ]
+    },
+    "21311920": {
+      "id": "21311920",
+      "title": "[MOCK] QC headphones - Silver",
+      "images": [
+        "img4",
+        "img5",
+        "img6"
+      ],
+      "offers": [
+        "offer2"
+      ],
+      "reviews": [
+        "review4",
+        "review5",
+        "review6"
+      ]
+    }
+  },
+  "images": {
+    "img1": {
+      "main": "https://dummyimage.com/450x450/7970db/fff&text=1",
+      "thumb": "https://dummyimage.com/80x80/7970db/fff&text=1"
+    },
+    "img2": {
+      "main": "https://dummyimage.com/450x450/8dccab/fff&text=2",
+      "thumb": "https://dummyimage.com/80x80/8dccab/fff&text=2"
+    },
+    "img3": {
+      "main": "https://dummyimage.com/450x450/9e7928/fff&text=3",
+      "thumb": "https://dummyimage.com/80x80/9e7928/fff&text=3"
+    },
+    "img4": {
+      "main": "https://dummyimage.com/450x450/535aa6/fff&text=4",
+      "thumb": "https://dummyimage.com/80x80/535aa6/fff&text=4"
+    },
+    "img5": {
+      "main": "https://dummyimage.com/450x450/bd5b42/fff&text=5",
+      "thumb": "https://dummyimage.com/80x80/bd5b42/fff&text=5"
+    },
+    "img6": {
+      "main": "https://dummyimage.com/450x450/bd49b3/fff&text=6",
+      "thumb": "https://dummyimage.com/80x80/bd49b3/fff&text=6"
+    }
+  },
+  "offers": {
+    "offer2": {
+      "price": {
+        "amount": 90,
+        "currency": "$"
+      },
+      "shipping": {
+        "amount": 5,
+        "currency": "$"
+      },
+      "status": "In Stock"
+    }
+  },
+  "reviews": {
+    "review4": {
+      "title": "Pellentesque quis lacus rhoncus, ultrices ante in",
+      "rating": "4.75/5",
+      "description": "ermentum sit amet euismod vel, elementum id turpis. Suspendisse quis tristique dui. Cras rhoncus rhoncus lectus, vel condimentum magna pretium ac."
+    },
+    "review5": {
+      "title": "Nam facilisis est non turpis eleifend hendrerit",
+      "rating": "4.5/5",
+      "description": "Proin volutpat malesuada est vel congue. Praesent lobortis varius mauris, ac malesuada odio feugiat quis"
+    },
+    "review6": {
+      "title": "Ut posuere dui eget mi vestibulum, auctor rutrum nulla porttitor",
+      "rating": "4.25/5",
+      "description": "Curabitur et lacinia lacus. Ut enim nisi, lobortis blandit elementum eget, euismod in dui. Morbi urna diam, luctus id ipsum sit amet, fringilla mattis tortor."
+    }
+  }
+}

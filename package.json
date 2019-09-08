@@ -1,0 +1,33 @@
+{
+  "name": "cypress-101",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "razzle start",
+    "start:alt": "DISABLE_SSR=true razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "cypress": "cypress open",
+    "cypress:ci": "cypress run"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "es6-promise": "^4.2.8",
+    "express": "4.17.1",
+    "lodash.get": "^4.4.2",
+    "razzle": "3.0.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-router-dom": "5.0.1",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-jsx-remove-data-test-id": "^2.0.0",
+    "cypress": "^3.4.1",
+    "docsify-cli": "^4.3.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "wait-on": "^3.3.0"
+  }
+}

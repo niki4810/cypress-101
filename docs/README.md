@@ -9,12 +9,21 @@ Here is a summary of what we will cover:
 - Running cypress in CI. 
 
 
-If you find any information to be inaccurate or needs improvement, please feel free to open a PR.
+If you find any information to be inaccurate or needs improvement, please feel free to open a PR 🙌.
+
+---
+
+# Prerequisites
+
+This tutorial assumes you have:
+- Basic understanding on how to run commands in a terminal or command prompt.
+- Node installed on your machine.
+- Basic understanding of javascript would be nice to have.
 
 ---
 
 # Getting started
-The app we will be testing is a simple item details page which is rendered on the server-side. Users can select multiple variations of the item, add the item to the cart, change the zip code, view reviews and ads on the page. The below screencap shows the demo application:
+The app we will be testing is a simple item details page which is rendered on the server-side. Users can select multiple variations of the item, add the item to the cart, change the zip code and view reviews & ads on the page. The below screencap shows the demo application:
 
 ![01-app-introduction](https://user-images.githubusercontent.com/1467801/64465537-081f1b80-d0c2-11e9-9795-8efb1ab31fc0.gif)
 
@@ -75,29 +84,33 @@ This app has been bootstrapped using [Razzle](https://github.com/jaredpalmer/raz
     "video": false
   }
   ```
+  > We will be testing items at the route `item/:itemId`. Rather than loading the full page, having `baseUrl` configured this way provides us a nice shorthand at the time of writing the tests.
+  
+  > When running tests in CI via `cypress run` command, at the end of the test run cypress generate a video for that test run. Setting `video` to false prevents that video from being generated. Feel free to look at any settings that apply to your usecase by looking at this [documentation](https://docs.cypress.io/guides/references/configuration.html#Options). For this demo we will use the above two settings.
 
-Now we are all done with installing and configuring cypress. We can start adding our tests 🎉
+Now we are all done with installing and configuring cypress. Each section  below is structured in a way that it covers a specific topic. At the end of each section, a link to the completed code is available for your reference. Let's start adding our tests 🎉
 
 ---
 
 # Adding page load tests
 
- By default cypress adds a ton of example test specs (which are great reference guides themselves) under `cypress > integration > examples`. You can delete the examples folder as we will be adding our tests.
+ By default cypress adds a ton of example test specs (which are great reference guides themselves) under `cypress > integration > examples`. You can delete the examples folder as we will be adding our own tests.
 
 1. Create a folder called `default` under `cypress > integration` and add a file called `page_load.spec.js`
 
-2. Add the following code to test to assert the page title is correct
+2. Add the following code to test to assert the page title is correct. (I've added comments `//` at each line to explain what it does)
   ```
   describe("when the page loads", () => {
     beforeEach(() => {
-      // sets the browser viewport width and height
+      // set the browser viewport width and height
       cy.viewport(1024, 1000);
       // load the item
       cy.visit("/item/21311919");
     });
 
     it("should render the correct title", () => {
-      // asserts that the page title element has the correct title.
+      // We get a reference to the title element via the `cy.get` command.
+      // Then we assert that the title element has the correct test on page load.
       cy.get("[data-cy='product-title']")
         .should("have.text", "QC headphones - Black");
     });
@@ -148,7 +161,7 @@ When our application loads, we are making a call to `api/ads` to fetch the ads o
 
     // mocks all get requests made to `api/ads` endpoint
     // and returns the mock ads.json data. We name this mock request
-    // with a adsCall alias.
+    // with as alias called adsCall.
     cy.route("GET", "/api/ads", "fixture:default/ads").as("adsCall");;
 
     cy.viewport(1024, 1000);
@@ -169,6 +182,7 @@ it("should render correct number of ads", () => {
     .as("adEl");
 
   // assert that the correct number of ads show up on page
+  // Notice how we are using alias to reference the element selector.
   cy.get("@adEl")
     .should("have.length", 3);
 
@@ -208,7 +222,6 @@ cy.fixture("default/regular_item_alt")
         // set up a route to mock the post request to
         // /api/item call, and respond with fixture data
         // We also set a delay of 500ms for this mock call.
-
         cy.route({
           method: "POST",
           url: "/api/item", 
@@ -444,4 +457,4 @@ module.exports = function(api) {
 
 # Integrating with CI
 
-TODO 🚧🚜🚛
+🚧🚧🚧🚧🚧🚧👷🏻‍TODO 🚧🚧🚧🚧🚧🚧

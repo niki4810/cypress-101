@@ -501,3 +501,15 @@ This is a modified version of travis config mentioned in cypress [docs](https://
 
 When everything in place, once you push this to file and merge it to your repo master, your PR's should start executing the cypress in travisci as shown below
 
+<img width="771" alt="Screen Shot 2019-10-04 at 2 25 32 PM" src="https://user-images.githubusercontent.com/1467801/66240996-d8f4cd80-e6b2-11e9-9078-fefbe489ea86.png">
+
+---
+
+# Credits
+
+- Thanks to Andy Van Slaars and his egghead course https://egghead.io/courses/end-to-end-testing-with-cypress, I personally learned a lot going through this course.
+- Cypress team for putting up great documentation
+- The demo application has been bootstrapped using Rzzzle: https://github.com/jaredpalmer/razzle
+- This documentation is created using: https://docsify.js.org/#/
+
+I've put up this tutorial as a guide for anyone who wants to get started with cypress. I hope you find this helpful 😊

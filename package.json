@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "docs": "docsify serve docs",
     "start": "razzle start",
     "start:alt": "DISABLE_SSR=true razzle start",
     "build": "razzle build",

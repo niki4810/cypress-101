@@ -509,7 +509,7 @@ When everything in place, once you push this to file and merge it to your repo m
 
 - Thanks to Andy Van Slaars and his egghead course https://egghead.io/courses/end-to-end-testing-with-cypress, I personally learned a lot going through this course.
 - Cypress team for putting up great documentation
-- The demo application has been bootstrapped using Rzzzle: https://github.com/jaredpalmer/razzle
+- The demo application has been bootstrapped using Razzle: https://github.com/jaredpalmer/razzle
 - This documentation is created using: https://docsify.js.org/#/
 
 I've put up this tutorial as a guide for anyone who wants to get started with cypress. I hope you find this helpful 😊

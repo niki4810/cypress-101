@@ -5,7 +5,7 @@ describe("when the page loads", () => {
 
   it("should render the correct title", () => {
     cy.get("[data-cy='product-title']")
-      .should("have.text", "[MOCK] QC headphones - Black !!!");
+      .should("have.text", "[MOCK] QC headphones - Black");
   });
 
   it("should set the correct price", () => {

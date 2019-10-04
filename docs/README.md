@@ -457,4 +457,47 @@ module.exports = function(api) {
 
 # Integrating with CI
 
-🚧🚧🚧🚧🚧🚧👷🏻‍TODO 🚧🚧🚧🚧🚧🚧
+We want to ensure that when new pull requests are opened, we run the cypress tests and ensure that nothing breaks. In this section we will add a simple CI configuration using `travisci` to run our cypress tests on every pull request.
+
+1. Before running our cypress tests, we want to ensure our application server is up and running. To achieve this we will install `start-server-and-test` as a dev dependency via: `npm i start-server-and-test --save`
+
+2. Add the following two lines to your `scripts` section in `package.json` file. (Note you may need to rename the previously added `cypress:ci` command as `cypress:run`)
+
+```
+    "cypress:run": "cypress run",
+    "start:alt": "DISABLE_SSR=true razzle start",
+    "cypress:ci": "start-server-and-test start:alt http://localhost:4000/item/21311919 cypress:run"
+```
+
+> `start:alt` starts the server in client side mode
+> `cypress:ci` runs the starts the `start:alt` script, waits for application to load and then run the cypress:run command
+
+3. Create a file called `.travis.yml` in the root of your project and copy paste this content 
+
+```
+language: node_js
+node_js:
+  - 10
+addons:
+  apt:
+    packages:
+      # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
+      - libgconf-2-4
+cache:
+  # Caches $HOME/.npm when npm ci is default script command
+  # Caches node_modules in all other cases
+  npm: true
+  directories:
+    # we also need to cache folder with Cypress binary
+    - ~/.cache
+install:
+  - npm ci
+script:
+  - npm run cypress:ci
+```
+
+This is a modified version of travis config mentioned in cypress [docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Travis). The import thing to note here is the last `script` section which run the `cypress:ci` task we created in step 2.
+
+
+When everything in place, once you push this to file and merge it to your repo master, your PR's should start executing the cypress in travisci as shown below
+

@@ -472,31 +472,7 @@ We want to ensure that when new pull requests are opened, we run the cypress tes
 > `start:alt` starts the server in client side mode
 > `cypress:ci` runs the starts the `start:alt` script, waits for application to load and then run the cypress:run command
 
-3. Create a file called `.travis.yml` in the root of your project and copy paste this content 
-
-```
-language: node_js
-node_js:
-  - 10
-addons:
-  apt:
-    packages:
-      # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
-      - libgconf-2-4
-cache:
-  # Caches $HOME/.npm when npm ci is default script command
-  # Caches node_modules in all other cases
-  npm: true
-  directories:
-    # we also need to cache folder with Cypress binary
-    - ~/.cache
-install:
-  - npm ci
-script:
-  - npm run cypress:ci
-```
-
-This is a modified version of travis config mentioned in cypress [docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Travis). The import thing to note here is the last `script` section which run the `cypress:ci` task we created in step 2.
+3. Create a file called `.travis.yml` in the root of your project and copy paste the contents of this [file](https://github.com/niki4810/cypress-101/blob/master/.travis.yml). This is a modified version of travis config mentioned in cypress [docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Travis). The import thing to note here is the last `script` section which run the `cypress:ci` task we created in step 2.
 
 
 When everything in place, once you push this to file and merge it to your repo master, your PR's should start executing the cypress in travisci as shown below
@@ -507,9 +483,14 @@ When everything in place, once you push this to file and merge it to your repo m
 
 # Credits
 
-- Thanks to Andy Van Slaars and his egghead course https://egghead.io/courses/end-to-end-testing-with-cypress, I personally learned a lot going through this course.
-- Cypress team for putting up great documentation
-- The demo application has been bootstrapped using Razzle: https://github.com/jaredpalmer/razzle
-- This documentation is created using: https://docsify.js.org/#/
-
 I've put up this tutorial as a guide for anyone who wants to get started with cypress. I hope you find this helpful 😊
+
+I would like to give credit to the following people/projects that I used in this tutorial:
+
+- Thanks to Andy Van Slaars and his [egghead course](https://egghead.io/courses/end-to-end-testing-with-cypress), I personally learned a lot going through this course.
+- Cypress team for putting up great documentation
+- The demo application has been bootstrapped using [Razzle](https://github.com/jaredpalmer/razzle)
+- I've used the [babel-plugin-jsx-remove-data-test-id](https://github.com/coderas/babel-plugin-jsx-remove-data-test-id) for remove the `data-*` attributes.
+- This documentation is created using [docsify](https://docsify.js.org/#/)
+
+

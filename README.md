@@ -12,7 +12,7 @@ Here is a summary of what we will cover:
 If you find any information to be inaccurate or needs improvement, please feel free to open a PR 🙌.
 
 # Getting started:
-The best way to learn this tutorial is by going through the step-by-step guide in the [docs](https://confident-perlman-8b6302.netlify.com/#/) or the local [docs readme](https://github.com/niki4810/cypress-101/tree/master/docs#introduction)
+The best way to learn this tutorial is by going through the step-by-step guide in the [docs](https://cypress101.netlify.com/#/) or the local [docs readme](https://github.com/niki4810/cypress-101/tree/master/docs#introduction)
 
 # Local development
 

@@ -469,7 +469,7 @@ We want to ensure that when new pull requests are opened, we run the cypress tes
 ```
 
 > `start:alt` starts the server in client side mode
-> `cypress:ci` runs the starts the `start:alt` script, waits for application to load and then run the cypress:headless command
+> `cypress:ci` runs the starts the `start:alt` script, waits for application to load and then run the `cypress:headless` command
 
 3. Create a file called `.travis.yml` in the root of your project and copy paste the contents of this [file](https://github.com/niki4810/cypress-101/blob/master/.travis.yml). This is a modified version of travis config mentioned in cypress [docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Travis). The import thing to note here is the last `script` section which run the `cypress:ci` task we created in step 2.
 

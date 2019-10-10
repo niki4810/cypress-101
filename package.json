@@ -8,7 +8,7 @@
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
     "cypress": "cypress open",
-    "cypress:ci": "cypress run"
+    "cypress:headless": "cypress run"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

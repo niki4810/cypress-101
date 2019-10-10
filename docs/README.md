@@ -57,13 +57,13 @@ This app has been bootstrapped using [Razzle](https://github.com/jaredpalmer/raz
   "scripts": {
     ...
     "cypress": "cypress open",
-    "cypress:ci": "cypress run"
+    "cypress:headless": "cypress run"
   },
   ```
 3. Ensure you application server is running: `npm start`
 
 4. In a separate terminal tab/window run `npm run cypress` to launch cypress test runner. 
-  (Alternative you can also run `npm run cypress:ci` to run your tests in the command line. We can skip this step for now)
+  (Alternative you can also run `npm run cypress:headless` to run your tests in the command line. We can skip this step for now)
 5. Running this would generate a cypress directory as shown below
 <img width="264" alt="Screen Shot 2019-09-06 at 9 55 24 PM" src="https://user-images.githubusercontent.com/1467801/64470032-18022400-d0f1-11e9-9e7d-a97d68caf0e3.png">
 
@@ -461,16 +461,15 @@ We want to ensure that when new pull requests are opened, we run the cypress tes
 
 1. Before running our cypress tests, we want to ensure our application server is up and running. To achieve this we will install `start-server-and-test` as a dev dependency via: `npm i start-server-and-test --save`
 
-2. Add the following two lines to your `scripts` section in `package.json` file. (Note you may need to rename the previously added `cypress:ci` command as `cypress:run`)
+2. Add the following two lines to your `scripts` section in `package.json` file.
 
 ```
-    "cypress:run": "cypress run",
     "start:alt": "DISABLE_SSR=true razzle start",
-    "cypress:ci": "start-server-and-test start:alt http://localhost:4000/item/21311919 cypress:run"
+    "cypress:ci": "start-server-and-test start:alt http://localhost:4000/item/21311919 cypress:headless"
 ```
 
 > `start:alt` starts the server in client side mode
-> `cypress:ci` runs the starts the `start:alt` script, waits for application to load and then run the cypress:run command
+> `cypress:ci` runs the starts the `start:alt` script, waits for application to load and then run the cypress:headless command
 
 3. Create a file called `.travis.yml` in the root of your project and copy paste the contents of this [file](https://github.com/niki4810/cypress-101/blob/master/.travis.yml). This is a modified version of travis config mentioned in cypress [docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Travis). The import thing to note here is the last `script` section which run the `cypress:ci` task we created in step 2.
 

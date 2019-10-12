@@ -457,7 +457,7 @@ module.exports = function(api) {
 
 # Integrating with CI
 
-We want to ensure that when new pull requests are opened, we run the cypress tests and ensure that nothing breaks. In this section we will add a simple CI configuration using `travisci` to run our cypress tests on every pull request.
+We want to ensure that when new pull requests are opened, we run the cypress tests and ensure that nothing breaks in our application. In this section, we will add a simple CI configuration using `Travis CI` to run our cypress tests on every pull request.
 
 1. Before running our cypress tests, we want to ensure our application server is up and running. To achieve this we will install `start-server-and-test` as a dev dependency via: `npm i start-server-and-test --save`
 
@@ -471,10 +471,11 @@ We want to ensure that when new pull requests are opened, we run the cypress tes
 > `start:alt` starts the server in client side mode
 > `cypress:ci` runs the starts the `start:alt` script, waits for application to load and then run the `cypress:headless` command
 
-3. Create a file called `.travis.yml` in the root of your project and copy paste the contents of this [file](https://github.com/niki4810/cypress-101/blob/master/.travis.yml). This is a modified version of travis config mentioned in cypress [docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Travis). The import thing to note here is the last `script` section which run the `cypress:ci` task we created in step 2.
+3. Create a file called `.travis.yml` in the root of your project and copy-paste the contents of this [file](https://github.com/niki4810/cypress-101/blob/master/.travis.yml). This is a modified version of Travis CI config mentioned in cypress [docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Travis). The import thing to note here is the last `script` section which runs the `cypress:ci` task we created in step 2.
 
 
-When everything in place, once you push this to file and merge it to your repo master, your PR's should start executing the cypress in travisci as shown below
+When everything is in place, once you push this file and merge it to your repo master, your new PR's should start executing the cypress tests in Travis CI as shown below
+
 
 <img width="771" alt="Screen Shot 2019-10-04 at 2 25 32 PM" src="https://user-images.githubusercontent.com/1467801/66240996-d8f4cd80-e6b2-11e9-9078-fefbe489ea86.png">
 

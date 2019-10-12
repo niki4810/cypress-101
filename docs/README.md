@@ -18,7 +18,7 @@ If you find any information to be inaccurate or needs improvement, please feel f
 This tutorial assumes you have:
 - Basic understanding on how to run commands in a terminal or command prompt.
 - Node installed on your machine.
-- Basic understanding of javascript would be nice to have.
+- Basic understanding of JavaScript would be nice to have.
 
 ---
 

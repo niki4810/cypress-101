@@ -487,6 +487,7 @@ When everything is in place, once you push this file and merge it to your repo m
 Congratulations you have made it through the tutorial 🎉. Here are a few practice assignments to put what you've learned to practice.
 
 1) Load the item page and ensure that the shipping and delivery options display the correct information.
+
 2) Load the item page, change the zipcode to `94402`, mock the API call that happens when zipcode is submitted, and ensure that the `Out of stock` banner gets displayed. 
 > Hint: Refer to Clicking alternate item section on how to mock API response, you may need to refer to cypress docs to find out how to type zip code and hit return or enter key
 

@@ -17,7 +17,7 @@ If you find any information to be inaccurate or needs improvement, please feel f
 
 This tutorial assumes you have:
 - Basic understanding on how to run commands in a terminal or command prompt.
-- Node installed on your machine.
+- `Node.js` version 10 or above installed on your machine. You can download the installer [here](https://nodejs.org/en/download/), alternatively you can install `Node.js` via nvm to manage multiple versions of node, see the instructions [here](https://github.com/nvm-sh/nvm#installation-and-update)
 - Basic understanding of JavaScript would be nice to have.
 
 ---
@@ -29,6 +29,7 @@ The app we will be testing is a simple item details page which is rendered on th
 
 To get started:
 - Clone the main repo: `git clone https://github.com/niki4810/cypress-101.git`
+- Cd into the project root, `cd cypress-101`
 - Check out the starter template: `git checkout 01-starter-template`
 - Install the dependencies: `npm install`
 - Start the application: `npm start`
@@ -481,6 +482,16 @@ When everything is in place, once you push this file and merge it to your repo m
 
 ---
 
+# Assingments
+
+Congratulations you have made it through the tutorial 🎉. Here are few practice assignments to put what you've learned to practice.
+
+1) Load the item page and ensure that the shipping and delivery options display correct information.
+2) Load the item page, change the zipcode to `94402`, mock the API call that happens when zipcode is submitted, and ensure that the `Out of stock` banner gets displayed. 
+> Hint: Refer to Clicking alternate item section on how to mock API response, you may need to refer to cypress docs to find out how to type zipcode and hit return or enter key
+
+
+---
 # Credits
 
 I've put up this tutorial as a guide for anyone who wants to get started with cypress. I hope you find this helpful 😊
